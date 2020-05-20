@@ -16,7 +16,7 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   ExcludedMethods: ["describe"]
-  Max: 30
+  Max: 50
 Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/PerceivedComplexity:
@@ -50,8 +50,6 @@ Lint/StructNewOverride:
   Enabled: false
 Style/MixinUsage:
     Enabled: false
-Metrics/BlockLength:
-  Enabled: false
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:

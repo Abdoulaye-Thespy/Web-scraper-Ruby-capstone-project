@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require_relative '../lib/scraper.rb'
 require_relative '../lib/logic.rb'
 require_relative '../lib/methods.rb'
@@ -74,5 +73,7 @@ loop do
       row << array
     end
   end
+
+  puts "Jobs saved, Check Jobs.csv to see the result"
   break
 end
