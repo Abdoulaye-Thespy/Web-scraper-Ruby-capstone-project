@@ -2,29 +2,37 @@
 # frozen_string_literal: true
 
 require_relative '../lib/scraper.rb'
-require_relative '../lib/logic'
+require_relative '../lib/logic.rb'
+require_relative '../lib/methods.rb'
+require "csv"
 require 'nokogiri'
 require 'httparty'
 require 'byebug'
 require 'pry'
+include Methods
+chec = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+obj = Scraper.new
+obj.scrape
+obj.create_hash
+puts
+puts
+puts
 
-    obj = Scraper.new
-    obj.scrape
-    obj.create_hash
-    puts
-    puts
-    puts
+puts '.............................Jobs got from page 1............................................'
+job_obj = obj.hash
+job_obj.each do |key, value|
+  puts "#{key} is #{value}"
+  puts
+end
 
-    puts ".............................Jobs got from page 1............................................"
-    job_obj = obj.hash
-    p job_obj
 loop do
   puts
   puts
   puts
   puts '................................choose page number, enter a number from 1 to 21.............................'
   Page_num = gets.chomp.to_i
-  if Page_num > 1 && Page_num < 22
+  res = Methods.check(chec, Page_num)
+  if Page_num > 1 && Page_num < 22 && res
     objf = Logic.new(Page_num)
     20.times do |x|
       puts 'Razak'
@@ -39,19 +47,32 @@ loop do
     puts
     puts
 
-    puts ".............................Jobs got from page #{Page_num}............................................"
-
-
+    puts '.............................Jobs got from selected pages............................................'
+    job_obj.each do |key, value|
+      puts "#{key} is #{value}"
+      puts
+    end
+    puts
+    puts
+    puts
   else puts '........................wrong number please enter a number from 1 to 21...................................'
     end
-  puts job_obj
-  puts obj.hash
-  Pry.start(binding)
+  puts
+  puts
+  puts
+
+  puts 'Enter 0 to exit or enter any other key to countinue'
+  choice = gets.chomp.to_i
+
+   if choice == 0
+
+    headers = ["Job_title","Locaction", "Salary","Employer", "posted_date", "link"]
+    csv = CSV.open("jobs.csv", "a+") do  |row|
+    row << headers
+
+    puts "...........Jobs saved successfully...................."
+    end
+    break
+  end
 end
 
-# CSV.open("jobs.csv", "wb") do |csv|
-#   obj.hash.each do |item|
-#    csv << [:, link]
-#   end
-# end
-# Pry.start(binding)
