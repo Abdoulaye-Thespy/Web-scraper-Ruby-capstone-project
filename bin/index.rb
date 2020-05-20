@@ -55,7 +55,7 @@ loop do
     puts
     puts
   else puts '........................wrong number please enter a number from 1 to 21...................................'
-    end
+  end
   puts
   puts
   puts
@@ -68,7 +68,6 @@ loop do
   csv = CSV.open('jobs.csv', 'a+') do |row|
     row << headers
   end
-  i = 0
   job_obj.count.times do |key, _value|
     array << job_obj[key]
     csv = CSV.open('jobs.csv', 'a+') do |row|

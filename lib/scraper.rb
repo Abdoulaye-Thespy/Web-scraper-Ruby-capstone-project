@@ -21,5 +21,5 @@ class Scraper
                 posted_date: jobs[x].css('li.results-posted-at').text.gsub("\n", ' '),
                 link: jobs[x].css('a').attr('href').value }
     end
-end
+  end
 end

@@ -4,6 +4,6 @@ module Methods
       chek[page_choice] = 1
       true
     else false
-  end
+    end
   end
 end

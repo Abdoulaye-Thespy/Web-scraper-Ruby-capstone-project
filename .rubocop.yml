@@ -42,9 +42,15 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+Style/NumericPredicate:
+  Enabled: false
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
+  Enabled: false
+Style/MixinUsage:
+    Enabled: false
+Metrics/BlockLength:
   Enabled: false
 Style/HashEachMethods:
   Enabled: false
