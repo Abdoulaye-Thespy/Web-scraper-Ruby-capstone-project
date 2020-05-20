@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 require_relative '../lib/scraper.rb'
 require_relative '../lib/logic.rb'
 require_relative '../lib/methods.rb'
-require "csv"
+require 'csv'
 require 'nokogiri'
 require 'httparty'
 require 'byebug'
@@ -12,6 +11,7 @@ require 'pry'
 include Methods
 chec = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 obj = Scraper.new
+array = []
 obj.scrape
 obj.create_hash
 puts
@@ -35,7 +35,6 @@ loop do
   if Page_num > 1 && Page_num < 22 && res
     objf = Logic.new(Page_num)
     20.times do |x|
-      puts 'Razak'
       job_obj << { job_title: objf.get_job_title(x),
                    location: objf.get_location(x),
                    salary: objf.get_salary(x),
@@ -60,19 +59,21 @@ loop do
   puts
   puts
   puts
-
   puts 'Enter 0 to exit or enter any other key to countinue'
   choice = gets.chomp.to_i
 
-   if choice == 0
+  next unless choice == 0
 
-    headers = ["Job_title","Locaction", "Salary","Employer", "posted_date", "link"]
-    csv = CSV.open("jobs.csv", "a+") do  |row|
+  headers = %w[Job_title Location Salary Employer posted_date link]
+  csv = CSV.open('jobs.csv', 'a+') do |row|
     row << headers
-
-    puts "...........Jobs saved successfully...................."
-    end
-    break
   end
+  i = 0
+  job_obj.count.times do |key, _value|
+    array << job_obj[key]
+    csv = CSV.open('jobs.csv', 'a+') do |row|
+      row << array
+    end
+  end
+  break
 end
-

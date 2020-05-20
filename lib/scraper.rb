@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Scraper
   attr_reader :parsed_page, :unparsed_page, :location, :job_title, :salary, :employer, :posted_date, :jobs, :link, :job_obj, :ul, :hash
   def initialize

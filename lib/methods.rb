@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Methods
   def check(chek, page_choice)
     if chek[page_choice] == 0
