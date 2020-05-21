@@ -31,12 +31,12 @@ end
 
 describe '.Logic' do
   let(:ob1) { Logic.new(5) }
-  let(:title) {ob1.get_job_title(2)}
-  let(:location) {ob1.get_location(2)}
-  let(:salary) {ob1.get_salary(2)}
-  let(:employer) {ob1.get_employer(2)}
-  let(:date) {ob1.get_posted_date(2)}
-  let(:link) {ob1.get_links(2)}
+  let(:title) { ob1.get_job_title(2) }
+  let(:location) { ob1.get_location(2) }
+  let(:salary) { ob1.get_salary(2) }
+  let(:employer) { ob1.get_employer(2) }
+  let(:date) { ob1.get_posted_date(2) }
+  let(:link) { ob1.get_links(2) }
   context '#scrape' do
     it 'checks that Job_title is returned' do
       expect(title).to be_a(String)
@@ -73,12 +73,12 @@ describe '.Logic' do
 end
 
 describe '.Methods' do
-	chec = [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    it 'checks whether the page is already scraped or not' do
-      expect(check?(chec, 4)).to be(false)
-    end
+  chec = [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  it 'checks whether the page is already scraped or not' do
+    expect(check?(chec, 4)).to be(false)
+  end
 
-      it 'checks whether the page is already scraped or not' do
-      expect(check?(chec, 5)).to be(true)
-    end
+  it 'checks whether the page is already scraped or not' do
+    expect(check?(chec, 5)).to be(true)
+  end
 end
