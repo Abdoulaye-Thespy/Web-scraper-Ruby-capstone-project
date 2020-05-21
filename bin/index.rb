@@ -67,12 +67,9 @@ loop do
   csv = CSV.open('jobs.csv', 'a+') do |row|
     row << headers
   end
-  job_obj.count.times do |key, _value|
-    array << job_obj[key]
     csv = CSV.open('jobs.csv', 'a+') do |row|
-      row << array
+      row << job_obj
     end
-  end
 
   puts 'Jobs saved, Check Jobs.csv to see the result'
   break

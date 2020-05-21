@@ -1,10 +1,10 @@
-# Web-scraper-Ruby-capstone-project\
+# Web-scraper-Ruby-capstone-project
 
 # What's a Web scraper
 
-## A web scraper is a small used progamm access a specific website and try to retrieve datas from it
+## A web scraper is a small progamm used to access a specific website and try to retrieve datas from it
 
-## website: https://www.jobcoconut.com/job-search is where we will be trying to get our information which are:
+## website: https://www.jobcoconut.com/job-search is where we will be trying to get our informations from, these information will be as follows: 
 
 # job's title
 
@@ -41,7 +41,7 @@ Navigate to the folder where the project has been cloned
 
 ### Install
 
-Install the Daru Gem by running `bundle install`
+Install the The Gems files by running `bundle install`
 
 # Descritption
 
