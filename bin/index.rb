@@ -10,7 +10,6 @@ require 'pry'
 include Methods
 chec = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 obj = Scraper.new
-array = []
 obj.scrape
 obj.create_hash
 puts
@@ -28,9 +27,13 @@ loop do
   puts
   puts
   puts
-  puts '................................choose page number, enter a number from 1 to 21.............................'
+  puts '......Enter 0 to exit or enter any other number to countinue note that the number you will enter will be the next page to be scraped.......'
+
+  puts
+  puts
+  puts '....................enter number from 2 to 20..............................'
   Page_num = gets.chomp.to_i
-  res = Methods.check(chec, Page_num)
+  res = Methods.check?(chec, Page_num)
   if Page_num > 1 && Page_num < 22 && res
     objf = Logic.new(Page_num)
     20.times do |x|
@@ -53,24 +56,24 @@ loop do
     puts
     puts
     puts
-  else puts '........................wrong number please enter a number from 1 to 21...................................'
-  end
-  puts
-  puts
-  puts
-  puts 'Enter 0 to exit or enter any other key to countinue'
-  choice = gets.chomp.to_i
 
-  next unless choice == 0
+    puts
+    puts
+    puts
 
-  headers = %w[Job_title Location Salary Employer posted_date link]
-  csv = CSV.open('jobs.csv', 'a+') do |row|
-    row << headers
-  end
-    csv = CSV.open('jobs.csv', 'a+') do |row|
+  elsif Page_num == 0
+
+    headers = ['.........Welcome.....', '.....................Job, We got from, our site.............']
+    fin = ['.................End............................', 'Thank you for using our program']
+    CSV.open('jobs.csv', 'a+') do |row|
+      row << headers
       row << job_obj
+      row << fin
     end
 
-  puts 'Jobs saved, Check Jobs.csv to see the result'
-  break
+    puts 'Jobs saved, Check Jobs.csv to see the result'
+    break
+
+  else puts '........................wrong number please enter a number from 1 to 20...................................'
+  end
 end
