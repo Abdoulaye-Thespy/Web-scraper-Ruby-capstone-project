@@ -18,6 +18,10 @@
 
 # links which are the direct link to those particular jobs.
 
+## Once you press on 0 to quit, the jobs will be save in a file called jobs.csv in your directory
+
+![screenshot](./images/1.png)
+
 
 ## Built With
 
