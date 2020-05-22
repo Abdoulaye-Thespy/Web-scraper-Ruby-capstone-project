@@ -1,4 +1,4 @@
-# !/usr/bin/env ruby
+#! /usr/bin/env ruby
 require_relative '../lib/scraper.rb'
 require_relative '../lib/logic.rb'
 require_relative '../lib/methods.rb'
@@ -31,7 +31,7 @@ loop do
 
   puts
   puts
-  puts '....................enter number from 2 to 20..............................'
+  puts '....................enter number from 2 to 19..............................'
   Page_num = gets.chomp.to_i
   res = Methods.check?(chec, Page_num)
   if Page_num > 1 && Page_num < 22 && res

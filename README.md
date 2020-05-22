@@ -27,13 +27,23 @@
 
 - Httparty gem
 
-- Pry and byebug to help with debugging
+- Pry gem
+
+- and byebug to help with debugging
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
 Clone this project running the following command in your terminal: git clone https://github.com/Abdoulaye-Thespy/Web-scraper-Ruby-capstone-project.git
+
+ *gem install pry* to install pry
+
+ *gem install nokogiri* to install Nokogiri
+
+ *gem install byebug* to install byebug
+
+ *gem install httparty* to install httparty
 
 ### Setup
 
