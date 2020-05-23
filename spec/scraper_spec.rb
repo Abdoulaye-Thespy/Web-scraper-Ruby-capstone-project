@@ -10,13 +10,7 @@ include Methods
 describe '.Scraper' do
   let(:ob) { Scraper.new }
   context '#scrape' do
-    it 'checks that scrape function do not return nul' do
-      expect(ob.scrape).not_to be(nil)
-    end
-  end
-
-  context '#scrape ' do
-    it 'makes sure scrape method  do not return nil' do
+    it 'checks that scrape function do not return nil' do
       expect(ob.scrape).not_to be(nil)
     end
   end
@@ -44,29 +38,29 @@ describe '.Logic' do
   end
 
   context '#scrape' do
-    it 'checks that Job_title is returned' do
+    it 'checks that location is returned' do
       expect(location).to be_a(String)
     end
   end
 
   context '#scrape' do
-    it 'checks that Job_title is returned' do
+    it 'checks that salary is returned' do
       expect(salary).to be_a(String)
     end
   end
 
   context '#scrape' do
-    it 'checks that Job_title is returned' do
+    it 'checks that Employer is returned' do
       expect(employer).to be_a(String)
     end
   end
   context '#scrape' do
-    it 'checks that Job_title is returned' do
+    it 'checks that posted date is returned' do
       expect(date).to be_a(String)
     end
   end
   context '#scrape' do
-    it 'checks that Job_title is returned' do
+    it 'checks that direct link is returned' do
       expect(link).to be_a(String)
     end
   end
