@@ -46,7 +46,7 @@ loop do
     end
     puts
     puts
-    puts 
+    puts
     puts
 
     puts '.............................Jobs got from selected pages............................................'
